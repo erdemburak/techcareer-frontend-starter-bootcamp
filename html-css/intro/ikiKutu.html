@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .dib div{
+            display: inline-block;
+            background-color: red;
+        }
+
+        .dib-2{
+            font-size: 0px;
+        }
+
+        .dib-2 div{
+            display: inline-block;
+            background-color: aqua;
+            font-size: 16px;
+        }
+
+        .float{
+            background-color: blue;
+        }
+        .float div{
+            float: left;
+        }
+
+        .cf::before,
+        .cf::after{
+            content: " ";
+            display: table;
+        }
+        .cf::after{
+            clear: both;
+        }
+
+        .flex{
+            display: flex;
+        }
+        .flex div{
+            background-color: purple;
+        }
+
+        .grid{
+            display: grid;
+            grid-template-columns: 200px 1fr 100px;
+            gap: 30px;
+        }
+        .grid div{
+            background-color: pink;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div>Card 1</div>
+    <div>Card 2</div>
+    <hr>
+
+    <table>
+        <tr>
+            <td><div>Card 1</div></td>
+            <td><div>Card 2</div></td>
+        </tr>
+    </table>
+    
+    <hr>
+
+    <div class="dib">
+        <div>Card 1</div><!--
+        --><div>Card 2</div>
+    </div>
+    <hr>
+    
+    <div class="dib-2">
+        <div>Card 1</div>
+        <div>Card 2</div>
+    </div>
+    <hr>
+
+    <div class="float cf">
+        <div style="color: aqua;">Card 1</div>
+        <div style="color: aqua;">Card 2</div>
+    </div>
+    <hr>
+
+    <div class="flex">
+        <div>Card 1</div>
+        <div>Card 2</div>
+    </div>
+    <hr>
+
+    <div class="grid">
+        <div>Card 1</div>
+        <div>Card 2</div>
+        <div>Card 3</div>
+        <div>Card 1</div>
+        <div>Card 2</div>
+        <div>Card 3</div>
+    </div>
+    <hr>
+
+
+</body>
+</html>
