@@ -1,0 +1,8 @@
+.sidebar {
+    background-color: $sidebar-bgcolor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    width: 15%;
+}

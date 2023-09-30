@@ -4,8 +4,6 @@
 /* reset */
 @import "reset/reset";
 
-/* layout */
-@import "layout/navbar";
-
 /* pages */
 @import "pages/home";
+@import "pages/partial/sidebar";
