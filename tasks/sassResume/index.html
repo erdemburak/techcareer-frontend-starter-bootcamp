@@ -5,6 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.menu-button').on('click', function (e) {
+                e.preventDefault();
+                var targetId = $(this).attr('data-target');
+                $('html, body').animate({
+                    scrollTop: $('#' + targetId).offset().top
+                }, 500);
+            });
+
+            $(window).scroll(function () {
+                $('.content').each(function () {
+                    if (isScrolledIntoView(this)) {
+                        var sectionId = $(this).attr('id');
+                        $('.menu-button').removeClass('active');
+                        $('[data-target="' + sectionId + '"]').addClass('active');
+                    }
+                });
+            });
+
+            function isScrolledIntoView(elem) {
+                var docViewTop = $(window).scrollTop();
+                var docViewBottom = docViewTop + $(window).height();
+                var elemTop = $(elem).offset().top;
+                var elemBottom = elemTop + $(elem).height();
+                return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+            }
+        });
+    </script>
     <title>Document</title>
 </head>
 
@@ -14,31 +46,210 @@
             <ul>
                 <li><img src="https://avatars.githubusercontent.com/u/103264555?s=400&u=6c551380e8273813336627402e31e9d70660e123&v=4"
                         alt="" width="150" height="150" srcset=""></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">Experience</a></li>
-                <li><a href="#">Education</a></li>
-                <li><a href="#">Links</a></li>
+                <li><a href="#" class="menu-button" data-target="about">HAKKIMDA</a></li>
+                <li><a href="#" class="menu-button" data-target="experience">TECRÜBE</a></li>
+                <li><a href="#" class="menu-button" data-target="education">EĞİTİM</a></li>
+                <li><a href="#" class="menu-button" data-target="skills">YETENEKLER</a></li>
             </ul>
         </div>
         <div class="content">
             <section class="content-section" id="about">
-                <h1>BURAK ERDEM</h1>
-                <span>burakerdem6@hotmail.com</span>
+                <h1>BURAK <span style="color: #CA7D60;">ERDEM</span></h1>
+                <p>553 567 4754 |<span> burakerdem6@hotmail.com</span></p>
 
-                <p>Java backend geliştirme alanında profesyonelleşme hedefimi takip ederken, JavaScript ve React gibi
+                <p style="margin-top: 20px;">Java backend development alanında profesyonelleşme hedefimi takip ederken,
+                    JavaScript ve React gibi
                     frontend teknolojilerinde de bilgi ve becerilerimi artırmaya odaklandım. </p>
-                <p>Öğrenmeye olan isteğim ile çeşitli alanlarda kendimi geliştirerek yazılım dünyasında etkili bir
+                <p style="margin-top: 10px;">Öğrenmeye olan isteğim ile çeşitli alanlarda kendimi geliştirerek yazılım
+                    dünyasında etkili bir
                     yazılım geliştirici olma yolunda ilerliyorum. </p>
+                <div style="margin-top: 40px;">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-github"></a>
+                </div>
             </section>
-
+            <hr>
             <section class="content-section" id="experience">
-                <h1>EXPERIENCE</h1>
+                <h2>TECRÜBE</h2>
 
-                <p>Java backend geliştirme alanında profesyonelleşme hedefimi takip ederken, JavaScript ve React gibi
-                    frontend teknolojilerinde de bilgi ve becerilerimi artırmaya odaklandım. </p>
-                <p>Öğrenmeye olan isteğim ile çeşitli alanlarda kendimi geliştirerek yazılım dünyasında etkili bir
-                    yazılım geliştirici olma yolunda ilerliyorum. </p>
+                <div class="ddate">
+                    <div style="margin-bottom: 35px;">
+                        <h3>FREELANCE</h3><br>
+
+                        <p>Aktif olarak Web geliştirme alanında freelancer olarak hizmet vermekteyim. </p>
+                        <p></p>
+                    </div>
+                    <div>
+                        <span style="color: #CA7D60;">Ekim 2022 - Halen</span>
+                    </div>
+                </div>
+
+                <div class="ddate">
+                    <div style="margin-bottom: 35px;">
+                        <h3>BİLGİSAYAR MÜHENDİSİ</h3>
+                        <h4>Emek Elektrik Endüstri A.Ş.</h4>
+
+                        <p>İmpark Eğitim Bilişim şirketinde stajyer olarak görev aldığım süre boyunca ASP.Net
+                            programlama dilinde uygulama geliştirdim, bu uygulamaların test aşamalarında
+                            görev aldım ve yazılım geliştirme takımının bir parçası olarak takım çalışması
+                            tecrübesi edindim. </p>
+                    </div>
+                    <div>
+                        <span style="color: #CA7D60;">Kasım 2020 - Nisan 2021</span>
+                    </div>
+                </div>
+
+                <div class="ddate">
+                    <div>
+                        <h3>STAJYER</h3>
+                        <h4>İmPark Eğitim Bilişim</h4>
+
+                        <p>İmpark Eğitim Bilişim şirketinde stajyer olarak görev aldığım süre boyunca ASP.Net
+                            programlama dilinde uygulama geliştirdim, bu uygulamaların test aşamalarında
+                            görev aldım ve yazılım geliştirme takımının bir parçası olarak takım çalışması
+                            tecrübesi edindim. </p>
+                    </div>
+                    <div>
+                        <span style="color: #CA7D60;">Şubat 2019 - Mayıs 2019</span>
+                    </div>
+                </div>
+
             </section>
+            <hr>
+
+            <section class="content-section" id="education">
+                <h2>EĞİTİM</h2>
+
+                <div class="ddate">
+                    <div style="margin-bottom: 35px;">
+                        <h3>Techcareer</h3>
+                        <h4>Front-End Bootcamp</h4>
+                        <p></p>
+                    </div>
+                    <div>
+                        <span style="color: #CA7D60;">Ekim 2023 - Halen</span>
+                    </div>
+                </div>
+                <div class="ddate">
+                    <div style="margin-bottom: 35px;">
+                        <h3>BİLGE ADAM AKADEMİ</h3>
+                        <h4>Full Stack Java Development</h4>
+                        <p></p>
+                    </div>
+                    <div>
+                        <span style="color: #CA7D60;">Mart 2022 - Ekim 2022</span>
+                    </div>
+                </div>
+                <div class="ddate">
+                    <div style="margin-bottom: 35px;">
+                        <h3>DÜZCE ÜNİVERSİTESİ</h3>
+                        <h4>BİLGİSAYAR MÜHENDİSLİĞİ - LİSANS</h4>
+                        <p></p>
+                    </div>
+                    <div>
+                        <span style="color: #CA7D60;">Eylül 2014 - Haziran 2019</span>
+                    </div>
+                </div>
+                <div class="ddate">
+                    <div style="margin-bottom: 35px;">
+                        <h3>ÇUBUK MESLEKİ VE TEKNİK ANADOLU LİSESİ</h3>
+                        <h4>BİLİŞİM TEKNOLOJİLERİ ALANI/Web Programcılığı</h4>
+                        <p></p>
+                    </div>
+                    <div>
+                        <span style="color: #CA7D60;">Eylül 2009 - Haziran 2013</span>
+                    </div>
+                </div>
+            </section>
+            <hr>
+
+            <section class="content-section" id="skills">
+                <h2>YETENEKLER</h2>
+                <h3>PROGRAMLAMA DİLLERİ & ARAÇLAR</h3>
+
+                <div class="skill-icons" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-java-plain"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>Java</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-scala-plain"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>Scala</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-spring-plain"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>Spring</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-postgresql-plain"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>PostgreSQL</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-mysql-plain"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>MySql</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-github-original"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>GitHub</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-docker-plain"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>Docker</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-kubernetes-plain"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>Kubernates</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-html5-plain"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>HTML5</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-css3-plain"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>CSS3</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-javascript-plain"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>Javascript</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-react-original"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>React</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-vscode-plain"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>VsCode</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; ">
+                        <i class="devicon-intellij-plain"></i>
+                        <hr style="margin-top: 10px;">
+                        <span>Intellij</span>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+            </section>
+
 
             <div class="footer">
 
