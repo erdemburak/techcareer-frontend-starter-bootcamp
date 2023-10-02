@@ -272,12 +272,14 @@
 
 
     var count = 0;
+    console.log("---- X içeren ülkeler ----")
     for (var i = 0; i < countryList.length; i++) {
         if (countryList[i].toLowerCase().includes("x")) {
             count++;
+            console.log(countryList[i]);
         }
     }
-    console.log(count);
+    console.log("X iceren ulke sayisi = " + count);
 
     //yukarıdaki dizide içerisinde X harfi geçen kaç ülke vardır?
 
