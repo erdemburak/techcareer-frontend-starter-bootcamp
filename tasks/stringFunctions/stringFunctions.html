@@ -11,19 +11,35 @@
 
 </body>
 <script>
+    //1) "  Çağatay Yıldız" isimli metindeki boşlukları kaldır.    (REPLACE)
     var name = "   Çağatay Yıldız";
-    console.log(name.replaceAll(" ", ""));
+    console.log("1 " + name.replaceAll(" ", ""));
 
+
+    //2) "cagatay yildiz" kelimesindeki boşlukları temizle ve tüm harfleri büyült ( REPLACE ve UPPER)
     var name1 = "cagatay yildiz";
-    console.log(name1.replace(" ", "").toUpperCase());
+    console.log("2 " + name1.replace(" ", "").toUpperCase());
 
-    var count = 0;
-    for (var i = 0; i < countryList.length; i++) {
-        if (countryList[i].toUpperCase.includes("X")) {
-            count++;
-        }
-    }
+    //3) "******Çağatay Yıldız" isimli metindeki yıldızları kaldır (REPLACE)
+    var name3 = "******Çağatay Yıldız";
+    console.log("3 " + name3.replaceAll("*", ""));
 
+    //4) "Çağatay  Yıldız" metnindeki kelimeler arasında 2 boşluk var bunu bir boşluk yap (REPLACE)
+    var name4 = "Çağatay  Yıldız";
+    console.log("4 " + name4.replace("  ", " "));
+
+    //5) "**Tech Career**" isimli metindeki yıldızları kaldır (REPLACE)
+    var name5 = "**Tech Career**";
+    console.log("5  " + name5.replaceAll("*", ""));
+
+    //6) "Tech Career" isimli metnin soluna ve sağına 3 yıldız koy. "***Tech Career***" ( Normal toplama operatörü)
+    var name6 = "Tech Career";
+    console.log("6 " + "***" + name6 + "***");
+
+    //7) "Tech Career Bilişim teknolojileri" metnindeki son kelimeyi büyült (SUBSTRING)
+    console.log("7 - ?");
+    //8) "Tech bilişim" kelimelerin ilk harflerini büyült (Substring ve upper)
+    console.log("8 - ?");
 </script>
 
 </html>
