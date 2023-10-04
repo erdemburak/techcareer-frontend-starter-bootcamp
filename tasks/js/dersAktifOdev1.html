@@ -1000,11 +1000,11 @@
 
     console.log("----en pahalı ürünün adını console a yazdır");
     var sortedProducts = product.sort((a, b) => a.unitPrice - b.unitPrice)
-    console.log("En pahalı ürün : " + sortedProducts.pop().unitPrice);
+    console.log("En pahalı ürün : " + sortedProducts.pop().name);
 
     console.log("----en ucuz ürünün adını console a yazdır");
     var sortedProducts = product.sort((b, a) => a.unitPrice - b.unitPrice)
-    console.log("En ucuz ürün : " + sortedProducts.pop().unitPrice);
+    console.log("En ucuz ürün : " + sortedProducts.pop().name);
 
 </script>
 
