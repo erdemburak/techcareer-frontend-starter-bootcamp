@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pist {
+            height: 544px;
+            width: 1559px;
+            background-image: url('image/pist.jpg');
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-start {
+            width: 200px;
+            height: 50px;
+            margin-top: 50px;
+        }
+
+        .konum {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .horses-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .horse {
+            width: 138px;
+            transition: left 1s ease-in-out;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Front-Bet</h1>
+    <hr>
+    <div style="display: flex; flex-direction: column; align-items: center; position: relative;">
+        <div class="konum">
+            <div class="pist">
+                <div class="horses-container">
+                    <div><img class="horse" src="image/horse1.png" style="left: 0;"></div>
+                    <br>
+                    <div><img class="horse" src="image/horse2.png" style="left: 0;"></div>
+                    <br>
+                    <div><img class="horse" src="image/horse3.png" style="left: 0;"></div>
+                    <br>
+                </div>
+
+            </div>
+        </div>
+        <button class="btn-start" onclick="start()">
+            Start
+        </button>
+    </div>
+
+
+</body>
+<script>
+    function start() {
+        var horses = document.querySelectorAll("img");
+
+        horses.forEach(function (horse) {
+            moveRight(horse);
+        });
+    }
+
+    function moveRight(horse) {
+        var curPosition = parseInt(horse.style.left) || 0;
+        var newPosition = curPosition + Math.random() * 80 + 10;
+        horse.style.left = newPosition + 'px';
+
+        if (newPosition >= 1372) {
+            alert("Kazandı!");
+            location.reload();
+        } else {
+            setTimeout(function () {
+                moveRight(horse);
+            }, 1000);
+        }
+    }
+</script>
+
+</html>
