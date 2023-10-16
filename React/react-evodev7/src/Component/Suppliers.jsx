@@ -24,7 +24,7 @@ function Suppliers() {
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th><button onClick={() => sortSuppliers()} className='w3-button w3-blue'>Company Name</button></th>
+                    <th onClick={() => sortSuppliers()}>Company Name</th>
                     <th>Contact Name</th>
                     <th>Country</th>
                     <th>Delete</th>
