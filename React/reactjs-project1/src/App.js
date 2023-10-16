@@ -1,12 +1,21 @@
-import Content from "./components/Content";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import JsxArraySample from "./jsxSample/JsxArraySample";
+import JsxIfElse from "./jsxSample/JsxIfElse";
+import JsxIntro from "./jsxSample/JsxIntro";
+import JsxObjectSample from "./jsxSample/JsxObjectSample";
+import ObjectArraySample from "./jsxSample/ObjectArraySample";
 
 function App() {
   return (<>
-    <Header />
-    <Content />
-    <Footer />
+    <div>
+      {/**/}
+      {/*<JsxArraySample />*/}
+      {/*<JsxIfElse />*/}
+      {/*<JsxIntro />*/}
+      {/*<ObjectArraySample />*/}
+      {/*<JsxObjectSample />*/}
+
+
+    </div>
   </>
   );
 }
