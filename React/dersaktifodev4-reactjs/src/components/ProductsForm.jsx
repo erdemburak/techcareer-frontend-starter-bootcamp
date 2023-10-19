@@ -7,7 +7,7 @@ const addProductsValidationSchema = Yup.object().shape({
     name: Yup.string().required("Name boş bırakılamaz"),
     unitPrice: Yup.number().required("Unit Price boş bırakılmaz").positive().integer(),
     unitsInStock: Yup.number().required("Stock boş bırakılmaz").positive().integer(),
-    quantityPerUnit: Yup.number().required("Quantity boş bırakılmaz").positive().integer()
+    quantityPerUnit: Yup.number().required("Quantity boş bırakılmaz")
 })
 
 function ProductsForm() {
