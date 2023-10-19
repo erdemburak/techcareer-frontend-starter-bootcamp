@@ -1,9 +1,10 @@
+import ProductsForm from "./components/ProductsForm";
+
 
 function App() {
-  return (
-    <div>
-    </div>
-  );
+  return (<>
+    <ProductsForm />
+  </>);
 }
 
 export default App;
