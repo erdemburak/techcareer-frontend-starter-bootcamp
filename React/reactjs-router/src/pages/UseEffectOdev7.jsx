@@ -3,17 +3,34 @@ import React, { useEffect, useState } from 'react'
 
 function UseEffectOdev7() {
 
-    const [customers, setcustomers] = useState([]);
+    const [suppliers, setsuppliers] = useState([]);
 
     useEffect(() => {
+        loadSuppliers();
+    }, [])
+
+    const loadSuppliers = () => {
         axios.get('https://northwind.vercel.app/api/suppliers')
             .then(res => {
-                setcustomers(res.data)
+                setsuppliers(res.data);
             })
-    }, [])
+    }
+
+    const deleteSupplier = (id) => {
+
+        var result = window.confirm("Want to delete?");
+        if (result) {
+
+            axios.delete('https://northwind.vercel.app/api/suppliers/' + id)
+                .then(res => {
+                    loadSuppliers();
+                })
+        }
+    }
 
     return (<>
         <div style={{ padding: '2%' }}>
+            <h1>Suppliers Length: {suppliers.length}</h1>
 
             <table className='w3-table w3-striped w3-bordered w3-hoverable'>
                 <thead>
@@ -27,13 +44,14 @@ function UseEffectOdev7() {
                 </thead>
                 <tbody>
                     {
-                        customers && customers.map(item => {
+                        suppliers && suppliers.map(item => {
                             return <tr key={item.id}>
                                 <td>{item.id}</td>
                                 <td>{item.companyName}</td>
                                 <td>{item.contactName}</td>
                                 <td>{item.contactTitle}</td>
                                 <td>{item.address.country}</td>
+                                <td><button onClick={() => deleteSupplier(item.id)}>Delete</button></td>
                             </tr>
                         })
                     }

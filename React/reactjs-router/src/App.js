@@ -5,6 +5,7 @@ import ContactPage from "./pages/ContactPage"
 import NotFound from "./pages/NotFound"
 import UseEffectOdev7 from "./pages/UseEffectOdev7"
 import OrderPage from "./pages/OrderPage"
+import "./App.css";
 
 function App() {
 
@@ -12,12 +13,12 @@ function App() {
   return (<>
 
     <ul style={{ display: 'flex', justifyContent: 'space-between' }}>
-      <li><Link to='/'>Home</Link></li>
-      <li><Link to='/about'>About</Link></li>
-      <li><Link to='/contact'>Contact</Link></li>
-      <li><Link to='/customers'>Customers</Link></li>
-      <li><Link to='/orderpage'>Orders</Link></li>
-      <li><Link to='/suppliersodev'>Suppliers Odev</Link></li>
+      <li><Link className="link-element" to='/'>Home</Link></li>
+      <li><Link className="link-element" to='/about'>About</Link></li>
+      <li><Link className="link-element" to='/contact'>Contact</Link></li>
+      <li><Link className="link-element" to='/customers'>Customers</Link></li>
+      <li><Link className="link-element" to='/orderpage'>Orders(Odev8/2 Date)</Link></li>
+      <li><Link className="link-element" to='/suppliersodev'>Odev8 Suppliers</Link></li>
     </ul>
 
     <Routes>
